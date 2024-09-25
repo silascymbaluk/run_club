@@ -30,7 +30,8 @@ const EditProfile = ({ navigation, profileData, updateProfile }) => {
   const getRunningLevelText = (value) => {
     if (value === 0) return 'Beginner';
     if (value === 1) return 'Intermediate';
-    return 'Advanced';
+    if (value === 2) return 'Advanced';
+    return 'Elite';
   };
 
   return (
@@ -52,7 +53,7 @@ const EditProfile = ({ navigation, profileData, updateProfile }) => {
       <Slider
         style={styles.slider}
         minimumValue={0}
-        maximumValue={2}
+        maximumValue={3}
         step={1}
         value={runningLevel}
         onValueChange={(value) => setRunningLevel(value)}
@@ -84,6 +85,14 @@ const EditProfile = ({ navigation, profileData, updateProfile }) => {
             name="run-circle"
             size={40}
             color={runningLevel === 2 ? 'black' : 'gray'}  // Black when selected, gray otherwise
+            style={styles.icon}
+          />
+          </TouchableOpacity>
+        <TouchableOpacity onPress={() => setRunningLevel(2)}>
+          <MaterialIcons
+            name="run-circle"
+            size={40}
+            color={runningLevel === 3 ? 'black' : 'gray'}  // Black when selected, gray otherwise
             style={styles.icon}
           />
         </TouchableOpacity>
