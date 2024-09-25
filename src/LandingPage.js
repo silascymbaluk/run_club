@@ -1,4 +1,5 @@
-// LandingPage.js
+// This is the loading screen that clients see
+// LandingPage.js 
 import React from 'react';
 import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 
